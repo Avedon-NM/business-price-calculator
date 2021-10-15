@@ -1,0 +1,71 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+.container {
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+    padding: 1rem;
+
+}
+
+.container form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 0.1em solid #292b2c;
+    flex-basis: 40%;
+    border-radius: 1rem;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: #f7f7f7;
+}
+
+.container form * {
+    border-radius: 0.5rem;
+    margin: 1rem;
+    padding: 0.5rem;
+}
+
+.screen {
+    height: 100px;
+    border-radius: 1rem;
+    background-color: white;
+    border: 0.1rem solid #292b2c;
+}
+
+div {
+    display: flex;
+    justify-content: space-between;
+}
+
+input {
+    flex-basis: 50%;
+}
+
+button {
+    width: 100%;
+    font-size: 2rem;
+    color:#f7f7f7;
+    background-color:#292b2c;
+    padding: 1rem;
+}
+
+.graph-div {
+    display: flex;
+    justify-content: center;
+    margin: 5rem;
+    padding: 5rem;
+    align-items: center;
+}
+
+#chartContainer {
+    width: 70%;
+    margin-bottom: 60rem;
+}
