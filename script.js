@@ -13,16 +13,14 @@ document.querySelector('.btn-submit').addEventListener('click', (event) => {
     let bandwidth = parseFloat(document.querySelector('#bandwidth').value)
 
     // Some input validation
-
-    console.log(isNaN(numUsers))
     if (isNaN(numUsers) || isNaN(numCompanies) || isNaN(bandwidth)) {
-        let error = `<p style="font-style: italic; color: red;">Invalid Input!</p>`
-        document.querySelector('.screen').innerHTML = error
+        let message = `<p style="font-style: italic; color: red;">Invalid Input!</p>`
+        returnMessage(message)
 
     } else if (numUsers > 100) {
         let message = `<p style="font-style: italic; color: orange;">Capacity Reached: Please contact the sales team</p>`
-        document.querySelector('.screen').innerHTML = message
-
+        returnMessage(message)
+        
     } else {
         let totalPrice = calculatePrice(numUsers, numCompanies, bandwidth)
         printResults(totalPrice)
@@ -109,4 +107,11 @@ function generateGraph(graphData) {
         }]
     });
     chart.render();
+}
+
+function returnMessage(message) {
+    document.querySelector('.screen').innerHTML = message
+    setTimeout(() => {
+       document.querySelector('.screen').innerHTML = "" 
+    }, 2000); 
 }
