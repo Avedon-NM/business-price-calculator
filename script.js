@@ -8,13 +8,15 @@ const VAT = 0.20
 document.querySelector('.btn-submit').addEventListener('click', (event) => {
     event.preventDefault()
 
-    let numUsers = document.querySelector('#num-users').value
-    let numCompanies = document.querySelector('#num-companies').value
-    let bandwidth = document.querySelector('#bandwidth').value
+    let numUsers = parseInt(document.querySelector('#num-users').value)
+    let numCompanies = parseInt(document.querySelector('#num-companies').value)
+    let bandwidth = parseFloat(document.querySelector('#bandwidth').value)
 
     // Some input validation
-    if (numUsers === "" || numCompanies === "" || bandwidth === "") {
-        let error = `<p style="font-style: italic; color: red;">All fields must be filled</p>`
+
+    console.log(isNaN(numUsers))
+    if (isNaN(numUsers) || isNaN(numCompanies) || isNaN(bandwidth)) {
+        let error = `<p style="font-style: italic; color: red;">Invalid Input!</p>`
         document.querySelector('.screen').innerHTML = error
 
     } else if (numUsers > 100) {
@@ -59,7 +61,7 @@ function printResults(totalPrice) {
 
 
 /*====================
-    PART TWO
+    PART TWO:
 ======================*/
 function generateGraphData(numUsers, numCompanies, bandwidth, totalPrice) {
     let data = []
