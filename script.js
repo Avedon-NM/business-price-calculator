@@ -75,9 +75,8 @@ function generateGraphData(numUsers, numCompanies, bandwidth, totalPrice) {
      }
 
      // Sorting the data by the number of users, since the inputted data was entered first
-     data.sort(function (a, b) {
-         return a.x - b.x;
-       });
+     data.sort((a, b) => a.x - b.x)
+       
        console.log(data)
        return data
 }
